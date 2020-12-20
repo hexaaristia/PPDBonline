@@ -1,0 +1,137 @@
+<%= form_for(@data, url: url_for(action: 'baru_post'), multipart: true ) do |f| %>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Nama Lengkap', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.text_field :guru_nama, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Tanggal Lahir', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.date_field :guru_tgl_lahir, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Tempat Lahir', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.text_field :guru_tempat_lahir, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Jenis Kelamin', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.select(:guru_jk, ['Laki-laki', 'Perempuan'], {}, { class: 'form-control-lg' } ) %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Alamat Lengkap', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.text_area :guru_alamat, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'No Telepon', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.text_field :guru_telepon, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'NIP', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.text_field :guru_nip, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Golongan', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.text_field :guru_golongan, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Email', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.text_field :guru_email, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Bidang Studi', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.text_field :guru_bidang_studi, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Pendidikan Terakhir', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.text_field :guru_pendidikan_terakhir, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Agama', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.select(:guru_agama, ['Islam', 'Kriten','Hindu','Budha','Protestan','Konghucu'], {}, { class: 'form-control-lg' } ) %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Status Perkawinan', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.select(:guru_status_perkawinan, ['Menikah', 'Belum Menikah'], {}, { class: 'form-control-lg' } ) %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <%= f.label 'Photo', { class: 'col-md-2' } %>
+    <div class="col-md-8">
+        <%= f.file_field :guru_photo, {class: 'form-control'} %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-8">
+        <input type="submit" value="Masukan Data" class="btn btn-primary">
+    </div>
+  </div>
+</div>
+
+<% end %>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bukti Pendaftaran</title>
+      <style>
+				h4 {
+					font-size: 20px;
+					text-align: center;
+				}
+
+				td {
+					font-size: 15px;
+					text-align: center;
+					font-weight: bold;
+				}
+
+            /* .tabel_laporan {
+                  border: 1px solid black;
+                  margin: 0 auto;
+                  border-collapse: collapse;
+                  font-size: 12px;
+            }
+            .tabel_laporan th, .tabel_laporan td {
+                  border: 1px solid black;
+                  border-collapse: collapse;
+                  padding: 5px 10px;
+            }
+            .tabel_laporan th {
+                  background-color: #E0E0E0;
+            } */
+      </style>
+</head>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<img src="/theme/images/logo.jpeg" width="60"  height="60" style="display: block; margin: auto">
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col">
+					<h4><b>Yayasan Peduli Anak Nagari</b></h4>
+					<h4><b>Sekolah Pendidikan Khusus (SPK) Serasi Kota Payakumbuh</b></h4>
+			</div>
+		</div>
+		<br>
+		<div class="row justify-content-center" >
+			<div class="col" style="border-bottom: 2px solid black; width:300px">
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col">
+				<h4>Bukti Pendaftaran </h4>
+				<h4>Penerimaan Peserta Didik Baru(PPDB) Online</h4>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<%= form_for(@data, url: url_for(action: 'bukti', pesertaaa_id: @data.id), multipart: true ) do |f| %>
+		<% @status = Pesertaa.where(id: session[:pesertaa_id]).first %>
+		<div class="row justify-content-center">
+
+				<table border=0>
+					<tr>
+						<td><%= @data.pesertaa_nama %></td>
+					</tr>
+					<tr>
+						<td><%= @data.pesertaa_kategori%></td>
+					</tr>
+			<% if @status.pesertaa_jenjang_pendidikan == 'SMA' && @status.pesertaa_kategori == 'Disabilitas Fisik'%>
+					<tr>
+						<td>0101<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SMA' && @status.pesertaa_kategori == 'Disabilitas Intelektual' %>
+					<tr>
+						<td>0102<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SMA' && @status.pesertaa_kategori == 'Disabilitas Mental' %>
+					<tr>
+						<td>0103<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SMA' && @status.pesertaa_kategori == 'Disabilitas Sensori' %>
+					<tr>
+						<td>0104<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SMP' && @status.pesertaa_kategori == 'Disabilitas Fisik' %>
+					<tr>
+						<td>0201<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SMP' && @status.pesertaa_kategori == 'Disabilitas Intelektual' %>
+					<tr>
+						<td>0202<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SMP' && @status.pesertaa_kategori == 'Disabilitas Mental' %>
+					<tr>
+						<td>0203<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SMP' && @status.pesertaa_kategori == 'Disabilitas Sensori' %>
+					<tr>
+						<td>0204<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SD' && @status.pesertaa_kategori == 'Disabilitas Fisik' %>
+					<tr>
+						<td>0301<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SD' && @status.pesertaa_kategori == 'Disabilitas Intelektual' %>
+					<tr>
+						<td>0302<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SD' && @status.pesertaa_kategori == 'Disabilitas Mental' %>
+					<tr>
+						<td>0303<%= @data.id %></td>
+					</tr>
+			<% elsif @status.pesertaa_jenjang_pendidikan == 'SD' && @status.pesertaa_kategori == 'Disabilitas Sensori' %>
+					<tr>
+						<td>0304<%= @data.id %></td>
+					</tr>
+			<% end %>
+				</table>
+		</div>
+			<br>
+			<br>
+			<div class="row">
+				<div class="col">
+					<img src="<%= @data.pesertaa_photo %>" style="display: block; margin: auto" width=100px height=100px>
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<!-- <div class="row">
+				<div class="col">
+					<h5 style=text-align:right><%= @data.updated_at%></h5>
+				</div>
+
+			</div> -->
+	</div>
+
+
+
+
+</html>
+
+<% end %>

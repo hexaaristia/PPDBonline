@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.card {
+  box-shadow: 0;
+  transition: 0.3s;
+  width: 20%;
+}
+
+/* .card:hover {
+  box-shadow: 0;
+} */
+
+/* .container {
+  padding-top: 0px;
+  padding-bottom: 0px;
+} */
+
+</style>
+</head>
+<body>
+  <main role="main" style="background-color:#FFFFFF">
+
+    <div class="jumbotron" style="padding:0px; background-color:#FFFFFF">
+      <section class="our-teachers">
+        <div class="container" style="text-align:center; background-color:#FFFFFF">
+          <h2 style=text-align:center>Data Guru SPK Serasi Kota Payakumbuh</h2>
+          <div class="row justify-content-center">
+            <% @gurus.each do |guru| %>
+              <div class="card">
+                <br>
+                  <a href="<%= url_for action: 'view', guru_id: guru.id %>"><img src="<%= guru.guru_photo %>" style="width:115px; height:150px"></a><hr>
+                    <div class="text-center mt-3"><h4><%= guru.guru_nama %></h4></div>
+                    <div><%= guru.guru_nip %></div>
+                    <div><%= guru.guru_golongan %></div>
+                </div>
+                <br>
+              <% end %>
+          </div>
+          </div>
+      </section>
+      <hr>
+    </div>
+  </main>
+</body>
+</html>

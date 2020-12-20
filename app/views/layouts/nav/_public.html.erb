@@ -1,0 +1,125 @@
+<div class="header-topbar" style="background-color:#008080">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3 col-sm-8 col-md-9">
+                <div class="header-top_address">
+                    <div class="header-top_list">
+                        <span class="icon-phone"></span><b>085217550651</b>
+                    </div>
+                    <div class="header-top_list">
+                        <span class="icon-envelope-open"></span><b>slb_serasi@yahoo.co.id</b>
+                    </div>
+                    <div class="header-top_list">
+                        <span class="icon-location-pin"></span><b>Payakumbuh, Sumatera Barat, INA. 26219</b>
+                    </div>
+                </div>
+                <!-- <div class="header-top_login2">
+                    <a href="">Hubungi Kami</a>
+                </div> -->
+            </div>
+            <!-- <div class="col-xs-6 col-sm-4 col-md-3">
+                <div class="header-top_login mr-sm-3">
+                    <a href="">Hubungi Kami</a>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+<div data-toggle="affix" style="background-color:#F0F8FF">
+    <div class="container nav-menu2">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar2 navbar-toggleable-md navbar-light bg-faded" style="background-color:#F0F8FF">
+                    <button class="navbar-toggler navbar-toggler2 navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+                        <span class="icon-menu"></span>
+                    </button>
+                    <a href="" class="navbar-brand nav-brand2"><img class="img img-responsive" width="100px;" height=70px; src="/theme/images/logo.jpeg"></a>
+                    <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/public/public/main"><b>Home</b></a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="">About</a>
+                            </li> -->
+
+                            <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+
+                                <div class="d-sm-none d-lg-inline-block"><b>Profil</b></div></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="/public/public/public/vdm" class="dropdown-item has-icon">
+                                        <i class="ion ion-android-person"></i><b>Visi dan Misi</b>
+                                    </a>
+                                    <a href="/public/public/public/tatatertib" class="dropdown-item has-icon">
+                                        <i class="ion-android-drafts"></i><b>Tata Tertib</b>
+                                    </a>
+                                    <a  class="dropdown-item has-icon" href="/public/public/public/fasilitas">
+                                        <i class="ion ion-gear-a"></i><b>Fasilitas Sekolah</b>
+                                    </a>
+                              </div>
+                          </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/public/gurudetail/index"><b>Guru</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/public/stafdetail/index"><b>Staf</b></a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="">Blog</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/public/infodetail/index"><b>Pengumuman</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/public/pesan/baru"><b>Kontak</b></a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="">Contact</a>
+                            </li> -->
+                         </ul>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                      <ul class="navbar-nav">
+
+
+                          <% @profil = Pesertaa.where(id: session[:pesertaa_id]).first %>
+                          <% if @profil %>
+                              <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+
+                                  <div class="d-sm-none d-lg-inline-block"><b><%= @profil.pesertaa_nama %></b></div></a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                      <a href="/public/peserta/index" class="dropdown-item has-icon">
+                                          <i class="ion ion-android-person"></i><b>Profil</b>
+                                      </a>
+                                      <a href="/public/pesan/baru" class="dropdown-item has-icon">
+                                          <i class="ion-android-drafts"></i><b>Pesan</b>
+                                      </a>
+                                      <a href="/public/peserta/bukti" class="dropdown-item has-icon">
+                                          <i class="ion-android-drafts"></i><b>Bukti Pendaftaran</b>
+                                      </a>
+                                      <a  class="dropdown-item has-icon" href="<%= url_for(controller: '/public/auth2', action: 'signout') %>">
+                                          <i class="ion ion-gear-a"></i><b>Logout</b>
+                                      </a>
+                                </div>
+                            </li>
+                            <% else %>
+                            <li class="nav-item">
+                              <a class="nav-link" href="/public/auth2/auth2/masuk"><b>Masuk</b></a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link" href="/public/auth2/auth2/daftar"><b>Daftar</b></a>
+                            </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
